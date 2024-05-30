@@ -6,7 +6,12 @@ var notas = []
 
 while (count <= 4){
     let nota = prompt(`Informe a Nota ${count}:`)
-    notas.push(parseFloat(nota))
+    if (isNaN(nota) || nota == undefined){
+        nota = 0.0
+    } else {
+        nota = parseFloat(nota)
+    }
+    notas.push(nota)
     count++
 }
 
